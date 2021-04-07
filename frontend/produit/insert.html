@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">TEST DE LA BASE DE DONNEES POSTGRE SQL</h1>
+    <h3 style="text-align: center;">Page d'insertion des produits</h3>
+    <br>
+    <hr>
+    <br>
+    <center>
+        <form method="post">
+            {% csrf_token %}
+
+            <table border="1">
+                <a href="{% url 'produits'%}">Liste des Produit</a>
+
+                <tr>
+                    <td>NOM</td>
+                    <td><input type="text" name="nom" required></td>
+
+                </tr>
+                <tr>    
+                    <td>CATEGORIE</td>
+                    <td><input type="text" name="categorie" required></td>
+
+                </tr>
+                <tr> 
+                    <td>MARQUE</td>
+                    <td><input type="radio" name="marque" value="Toyota"> Toyota |&ensp;
+                        <input type="radio" name="marque" value="Nissan"> Nissan
+                    </td>
+                </tr>
+                <tr> 
+                    <td>COULEUR</td>
+                    <td>
+                        <select name="couleur" id="" required>
+                            <option selected disabled=true>-- Selectionnez une Couleur --</option>
+                            <option value="Rouge">Rouge</option>
+                            <option value="Noire">Noire</option>
+                            <option value="Bleue">Bleue</option>
+                            <option value="Blanche">Blanche</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr> 
+                    <td>VARIETE</td>
+                    <td><input type="text" name="variete" required></td>
+                </tr>
+                <tr> 
+                    <td>QUANTITE</td>
+                    <td><input type="number" name="quantite" required></td>
+                </tr>
+                <tr> 
+                    <td>PRIX</td>
+                    <td><input type="number" name="prix" required></td>
+                </tr>
+                <tr> 
+                    <td colspan="2"><label for="descr">Description</label><br><textarea style="width: 99%;" name="descr" id="descr" cols="30" rows="10" required></textarea></td>
+
+                </tr>
+                <tr style="text-align: center;"> 
+                    <td colspan="2"><input type="submit" value="ENREGISTRER"></td>
+
+                </tr>
+   
+            </table>
+
+            {% if messages %}
+            
+            {% for mess in messages %}
+
+            <b style="color: green;"> {{mess}} </b>
+
+            {% endfor %}
+
+            {% endif %}
+        </form>
+    </center>   
+
+
+</body>
+</html>

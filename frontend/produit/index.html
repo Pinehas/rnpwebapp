@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">TEST DE LA BASE DE DONNEES POSTGRE SQL</h1>
+    <h3 style="text-align: center;">Liste des produits</h3>
+    <br>
+    <hr>
+    <br>
+    
+    <center>
+        <a href="register.html">Nouveau Produit</a>
+        <br>
+        <table border="1">
+
+            <tr>
+                <th>Id</th>
+                <th>NOM</th>
+                <th>CATEGORIE</th>
+                <th>MARQUE</th>
+                <th>COULEUR</th>
+                <th>VARIETE</th>
+                <th>QUANTITE</th>
+                <th>PRIX</th>
+                <th colspan="2">OPTIONS</th>
+
+            </tr>
+
+            {% for result in data  %}
+            <tr>
+                <td> {{ result.id }} </td>
+                <td> {{ result.nom }} </td>
+                <td> {{ result.categorie }} </td>
+                <td> {{ result.marque }} </td>
+                <td> {{ result.couleur }} </td>
+                <td> {{ result.variete }} </td>
+                <td> {{ result.quantite }} </td>
+                <td><b> {{ result.prix }} </b></td>
+                <td><b> <a href="{% url 'editprod' id=result.id %}">Edit</a> </b></td>
+                <td><b> <a href="{% url 'supprod' id=result.id %}" onclick="return confirm('Confirmez la suppression !')" >Delete</a> </b></td>
+        
+            </tr>
+            <tr>
+                <td colspan="8" style="text-align: center;"> {{ result.descr }} </td>
+            </tr>
+            {% endfor  %}
+        </table>
+    </center>   
+
+
+</body>
+</html>
