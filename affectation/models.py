@@ -5,7 +5,7 @@ from django.db import models
 class AffectationModel(models.Model):
     matricule = models.FloatField(null=False)
     code_projet = models.CharField(max_length=200, null=False) # promotion, ordinaire, retrogarde, interime
-    date = models.DateField()
+    date = models.DateField(null=False)
     details = models.CharField(max_length=200, null=True)
     class Meta:
         db_table = "affectation"

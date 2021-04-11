@@ -5,7 +5,7 @@ from django.db import models
 class ServiceModel(models.Model):
     nom = models.CharField(max_length=200, null=False)
     categorie = models.CharField(max_length=200, null=True)
-    image_service = models.FileField(upload_to='media', null=False)
+    image_service = models.FileField()
     description = models.CharField(max_length=200, null=False)
     class Meta:
         db_table = "service"
