@@ -23,6 +23,6 @@ class PersonnelModel(models.Model):
     photo = models.FileField()
     num_cni = models.CharField(max_length=200, null=False)
     contrat = models.FileField()
-    salaire = models.FloatField(null=False)
+    salaire = models.IntegerField(null=False)
     class Meta:
         db_table = "personnel"

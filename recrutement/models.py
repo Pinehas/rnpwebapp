@@ -44,7 +44,7 @@ class CandidatModel(models.Model):
     pays = models.CharField(max_length=200, null=False)
     ville = models.CharField(max_length=200, null=False)
     motivation = models.CharField(max_length=200, null=True)
-    cv_candidat = models.FileField(upload_to='media', null=False)
+    cv_candidat = models.FileField()
     piece_jointe_cand = models.FileField()
     date = models.DateField(null=False)
     class Meta:
