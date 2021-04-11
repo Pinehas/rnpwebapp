@@ -14,14 +14,14 @@ class OffreModel(models.Model):
     details = models.CharField(max_length=200, null=True)
     date_pubplication = models.DateField(null=False)
     date_limite = models.DateField(null=False)
-    piece_offre = models.FileField(upload_to='media', null=True)
+    piece_offre = models.FileField()
     class Meta:
         db_table = "offre"
 
 class DemissionModel(models.Model):
     id_personnel = models.IntegerField(null=False)
     motif = models.CharField(max_length=200, null=False)
-    lettre = models.FileField(upload_to='media', null=True)
+    lettre = models.FileField()
     date = models.DateField(null=False)
     class Meta:
         db_table = "demission"
@@ -30,7 +30,7 @@ class DemissionModel(models.Model):
 class LicenciementModel(models.Model):
     id_personnel = models.IntegerField(null=False)
     motif = models.CharField(max_length=200, null=False)
-    piece_licenciement = models.FileField(upload_to='media', null=True)
+    piece_licenciement = models.FileField()
     date = models.DateField(null=False)
     class Meta:
         db_table = "licenciement"
@@ -45,7 +45,7 @@ class CandidatModel(models.Model):
     ville = models.CharField(max_length=200, null=False)
     motivation = models.CharField(max_length=200, null=True)
     cv_candidat = models.FileField(upload_to='media', null=False)
-    piece_jointe_cand = models.FileField(upload_to='media', null=True)
+    piece_jointe_cand = models.FileField()
     date = models.DateField(null=False)
     class Meta:
         db_table = "candidat"

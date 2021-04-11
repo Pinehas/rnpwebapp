@@ -10,7 +10,7 @@ class ClientModel(models.Model):
     pays = models.CharField(max_length=200, null=False)
     ville = models.CharField(max_length=200, null=False)
     quartier = models.CharField(max_length=200, null=False)
-    profil = models.FileField(upload_to='media', null=False)
+    profil = models.FileField()
     password = models.CharField(max_length=200, null=False)
     date_inscription = models.DateField(auto_now_add=True, null=False)
     class Meta:
@@ -20,7 +20,7 @@ class MessageClientModel(models.Model):
     id_client = models.IntegerField(null=False)
     message = models.CharField(max_length=200, null=True)
     date = models.DateTimeField(auto_now_add=True, null=False)
-    piece_client = models.FileField(upload_to='media', null=True)
+    piece_client = models.FileField()
 
     class Meta:
         db_table = "messageclient"
@@ -29,7 +29,7 @@ class ReponseClientModel(models.Model):
     id_client = models.IntegerField(null=False)
     message = models.CharField(max_length=200, null=True)
     date = models.DateTimeField(auto_now_add=True, null=False)
-    piece_service = models.FileField(upload_to='media', null=True)
+    piece_service = models.FileField()
 
     class Meta:
         db_table = "reponseclient"

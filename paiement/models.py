@@ -19,7 +19,7 @@ class AchatModel(models.Model):
     objet = models.CharField(max_length=200, null=False)
     prix = models.IntegerField(null=False)
     quantite = models.IntegerField(null=False)
-    piece_facture = models.FileField(upload_to='media', null=True)
+    piece_facture = models.FileField()
     date = models.DateTimeField(null=False)
     class Meta:
         db_table = "achat"
@@ -30,7 +30,7 @@ class PaiementSortantModel(models.Model):
     objet = models.CharField(max_length=200, null=False)
     details = models.TextField(null=True)
     montant = models.FloatField(null=False)
-    piece_recu = models.FileField(upload_to='media', null=True)
+    piece_recu = models.FileField()
     date = models.DateTimeField(null=False)
     class Meta:
         db_table = "paiementsortant"
@@ -41,7 +41,7 @@ class PaiementEntrantModel(models.Model):
     details = models.TextField(null=False)
     montant = models.FloatField(null=False)
     montant_restant = models.FloatField(null=False)
-    piece_entree = models.FileField(upload_to='media', null=True)
+    piece_entree = models.FileField()
     date = models.DateTimeField(null=False)
     class Meta:
         db_table = "paiemententrant"
@@ -51,7 +51,7 @@ class CreditModel(models.Model):
     objet = models.CharField(max_length=200, null=False)
     details = models.TextField(null=True)
     montant = models.FloatField(null=False)
-    piece_credit = models.FileField(upload_to='media', null=True)
+    piece_credit = models.FileField()
     date_remboursement = models.DateTimeField(null=False)
     date = models.DateField(null=False)
     class Meta:
@@ -62,7 +62,7 @@ class RemboursementModel(models.Model):
     nature = models.CharField(max_length=200, null=True)
     details = models.TextField(null=False)
     montant = models.FloatField(null=False)
-    piece_remboursement = models.FileField(upload_to='media', null=True)
+    piece_remboursement = models.FileField()
     montant_restant = models.FloatField(null=False)
     date = models.DateTimeField(null=False)
     class Meta:
@@ -74,7 +74,7 @@ class CapitalModel(models.Model):
     objet = models.CharField(max_length=200, null=False)
     details = models.CharField(max_length=200, null=True)
     montant = models.FloatField(null=False)
-    piece_capital = models.FileField(upload_to='media', null=True)
+    piece_capital = models.FileField()
     date = models.DateField(null=False)
     class Meta:
         db_table = "capital"

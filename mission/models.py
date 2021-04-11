@@ -9,7 +9,7 @@ class MissionModel(models.Model):
     details = models.TextField(null=False)
     pays = models.CharField(max_length=200, null=True)
     ville = models.CharField(max_length=200, null=True)
-    ordre = models.FileField(upload_to='media', null=True)
+    ordre = models.FileField()
     debut = models.DateField(null=False)
     fin = models.DateField(null=False)
     class Meta:
@@ -17,7 +17,7 @@ class MissionModel(models.Model):
 
 class RapportMissionModel(models.Model):
     id_mission = models.FloatField(null=False)
-    rapport = models.FileField(upload_to='media', null=True)
+    rapport = models.FileField()
     date = models.DateTimeField(null=False)
     class Meta:
         db_table = "rapportmission"

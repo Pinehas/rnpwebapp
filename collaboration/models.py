@@ -30,7 +30,7 @@ class Chat(models.Model):
     id_personnel = models.IntegerField(null=False)
     id_cible = models.IntegerField(null=False)
     texte = models.CharField(max_length=5000, null=False)
-    piece_chat = models.FileField(upload_to='media', null=True)
+    piece_chat = models.FileField()
     heure = models.DateTimeField(auto_now_add=True, null=False)
     class Meta:
         db_table = "chat"
@@ -39,7 +39,7 @@ class NoteModel(models.Model):
     type_note = models.CharField(max_length=200,null=False)
     texte = models.CharField(max_length=5000,null=False)
     date = models.DateTimeField(auto_now_add=True, null=False)
-    piece_note = models.FileField(upload_to='media', null=True)
+    piece_note = models.FileField()
 
     class Meta:
         db_table = "note"
@@ -48,6 +48,6 @@ class AnnonceModel(models.Model):
     objet = models.CharField(max_length=200 ,null=False)
     texte = models.CharField(max_length=5000,null=False)
     date = models.DateTimeField(auto_now_add=True, null=False)
-    piece_annonce = models.FileField(upload_to='media', null=True)
+    piece_annonce = models.FileField()
     class Meta:
         db_table = "annonce"

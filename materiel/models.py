@@ -10,7 +10,7 @@ class MaterielModel(models.Model):
     marque = models.CharField(max_length=200, null=True)
     couleur = models.CharField(max_length=200, null=True)
     variete = models.CharField(max_length=200, null=True)
-    guide = models.FileField(upload_to='media', null=True)
+    guide = models.FileField()
     descr = models.CharField(max_length=200, null=False)
     date_ajout = models.DateField(auto_now_add=True ,null=False)
     class Meta:

@@ -10,7 +10,7 @@ class ProduitModel(models.Model):
     variete = models.CharField(max_length=200, null=True)
     quantite = models.FloatField(null=False)
     descr = models.TextField(null=False)
-    img_prod = models.FileField(upload_to='media', null=True)
+    img_prod = models.FileField()
     class Meta:
         db_table = "produit"
 
