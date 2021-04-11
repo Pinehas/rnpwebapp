@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('home', include('website.urls')),
+    path('', include('website.urls')),
     path('affectation/', include('affectation.urls')),
     path('client/', include('client.urls')),
     path('commande/', include('commande.urls')),
@@ -30,7 +30,7 @@ urlpatterns = [
     path('mission/', include('mission.urls')),
     path('paiement/', include('paiement.urls')),
     path('permission/', include('permission.urls')),
-    path('', include('personnel.urls')),
+    path('personnel', include('personnel.urls')),
     path('produit/', include('produit.urls')),
     path('recrutement/', include('recrutement.urls')),
     path('salaire/', include('salaire.urls')),
