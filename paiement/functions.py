@@ -19,7 +19,7 @@ def handle_piece_credit(f):
             destination.write(chunk)
 
 def handle_piece_remboursement(f):
-    with open('APPLICATION/static/files/'+piece_remboursement/f.name, 'wb+') as destination:
+    with open('APPLICATION/static/files/piece_remboursement/'+f.name, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
