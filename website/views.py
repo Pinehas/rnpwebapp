@@ -1,4 +1,7 @@
 from django.shortcuts import render
+
+from client.models import ClientModel
+from personnel.models import PersonnelModel
 from produit.models import *
 from communication.models import *
 from service.models import *
@@ -18,7 +21,25 @@ def about(request):
     return render(request, 'website/about.html')
 
 def login(request):
-    return render(request, 'website/login.html')
+    if request.method == "POST":
+        client = ClientModel.objects.all()
+        personnel = PersonnelModel.objects.all()
+        register = False
+        for result in client:
+            if result.mail == request.POST.get('email') and result.password == request.POST.get('password'):
+                return render(request, 'client/main.html')
+
+        for result in personnel:
+            if result.mail == request.POST.get('email') and result.password == request.POST.get('password'):
+                return render(request, 'personnel/main.html')
+
+        register = True
+
+        if register:
+            return render(request, 'website/register.html')
+
+    else:
+        return render(request, 'website/login.html')
 
 def services(request):
     service = ServiceModel.objects.all()
