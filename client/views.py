@@ -10,6 +10,7 @@ def home(request):
     return render(request, 'client/main.html')
 
 def insert_client(request):
+    form = ClientForm()
     if request.method=="POST":
         client = ClientForm(request.POST, request.FILES)
         if client.is_valid():
@@ -39,7 +40,7 @@ def insert_client(request):
 #            messages.success(request, 'Inscription réussie ! Veillez vous connecter svp')
 #            return render(request, 'website/register.html')
     else:
-        return render(request, 'website/register.html')
+        return render(request, 'website/register.html', {'form':form})
 
 def insert_msg_client(request):
     if request.method=="POST":
