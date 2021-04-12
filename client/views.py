@@ -17,10 +17,10 @@ def insert_client(request):
             model_instance = client.save(commit=False)
             model_instance.save()
             messages.success(request, 'Inscription réussie ! Connectez-vous s''il vous plaît !')
-            return render(request, 'client/register.html')
+            return render(request, 'website/register.html')
         else:
-            messages.success(request, 'Il manque des données dans votre enregistrement !')
-            return render(request, 'client/register.html')
+            messages.success(request, 'echec de l''inscription !')
+            return render(request, 'website/register.html')
 
 
 #        if request.POST.get('nom') and request.POST.get('categorie') and request.POST.get('telephone') and request.POST.get('email')  and request.POST.get('pays') and request.POST.get('ville') and request.POST.get('quartier') and request.POST.get('photo') and request.POST.get('password'):
@@ -36,8 +36,8 @@ def insert_client(request):
 #            saverecord.photo = request.POST.get('photo')
 #            saverecord.password = request.POST.get('password')
 #            saverecord.save()
-            messages.success(request, 'Inscription réussie ! Veillez vous connecter svp')
-            return render(request, 'website/register.html')
+#            messages.success(request, 'Inscription réussie ! Veillez vous connecter svp')
+#            return render(request, 'website/register.html')
     else:
         return render(request, 'website/register.html')
 
