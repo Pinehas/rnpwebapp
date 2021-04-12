@@ -107,7 +107,16 @@ https://templatemo.com/tm-545-finance-business
             <div class="section-heading">
               <h2> <em>Registration</em></h2>
               <span></span>The E-mail Address you enter here will also serve as the login identifier for your customer account.</span>
-              
+              {% if messages %}
+
+            {% for mess in messages %}
+              <br>
+              <p>
+                <b style="color: red;"> {{mess}} </b>
+              </p>
+            {% endfor %}
+
+            {% endif %}
             </div>
           </div>
           <div class="col-md-12">
