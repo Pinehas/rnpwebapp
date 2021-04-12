@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-web: gunicorn CCMS.wsgi --log-file -
-=======
-web: gunicorn etcapp.wsgi
->>>>>>> githubv1.1/master
+web: gunicorn projet.wsgi
