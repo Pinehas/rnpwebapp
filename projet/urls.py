@@ -21,7 +21,7 @@ urlpatterns = [
     path('affectation/', include('affectation.urls')),
     path('client/', include('client.urls')),
     path('commande/', include('commande.urls')),
-    path('collaboration./', include('collaboration.urls')),
+    path('collaboration/', include('collaboration.urls')),
     path('communication/', include('communication.urls')),
     path('conges/', include('conges.urls')),
     path('discipline/', include('discipline.urls')),
