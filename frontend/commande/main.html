@@ -224,28 +224,30 @@
                             <tr class="headings">
                             
                               
+                              <th class="column-title">Categorie </th>
                               <th class="column-title">Nom </th>
-                              <th class="column-title">Service </th>
-                              <th class="column-title">Poste </th>
+                              <th class="column-title">Ville </th>
                               <th class="column-title">Option </th>
                               <th class="column-title">Details </th>
                               </th>
                               
                             </tr>
                           </thead>
-    
+
                           <tbody>
+                          {% for item in client  %}
+
                             <tr class="even pointer">
                               
-                              <td class=" ">121000040</td>
-                              <td class=" ">nom et prenoms </td>
-                              <td class=" ">service</td>
+                              <td class=" ">{{ item.categorie }}</td>
+                              <td class=" ">{{ item.nom }}</td>
+                              <td class=" ">{{ item.telephone }}</td>
                               <td class=" ">poste</td>
                               <td class=" ">Modifier</td>
                               
                               
                             </tr>
-                            
+                           {% endfor  %}
                           </tbody>
                         </table>
                       </div>

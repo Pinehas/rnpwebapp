@@ -10,7 +10,7 @@ class ClientModel(models.Model):
     pays = models.CharField(max_length=200, null=False)
     ville = models.CharField(max_length=200, null=False)
     quartier = models.CharField(max_length=200, null=False)
-    img_client = models.FileField()
+    img_client = models.FileField(upload_to='img_client/')
     password = models.CharField(max_length=200, null=False)
     date_inscription = models.DateField(auto_now_add=True, null=False)
     class Meta:

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from client.models import ClientModel
 from .models import *
 from .forms import *
 from django.contrib import messages
@@ -8,7 +10,8 @@ from django.http import HttpResponse
 def home(request):
     showcmd=Cmd_Prod_Model.objects.all()
     showdmd=Dmd_Serv_Model.objects.all()
-    return render(request, 'commande/main.html', {"dmd":showdmd, "cmd":showcmd})
+    showclient=ClientModel.objects.all()
+    return render(request, 'commande/main.html', {"dmd":showdmd, "cmd":showcmd, "client":showclient})
 
 def list_cmd(request):
     showcmd=Cmd_Prod_Model.objects.all()
